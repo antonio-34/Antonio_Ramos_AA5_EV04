@@ -1,0 +1,98 @@
+PROYECTO: API Restaurante - Antonio Ramos - AA5 EV04
+ESTUDIANTE: Antonio Ramos
+BASE URL: http://localhost:3000/api
+PUERTO: 3000
+SERVIDOR: http://localhost:3000/
+
+RUTA BASE DE VERIFICACION:
+GET  /  ->  http://localhost:3000/
+Respuesta: {"mensaje":"API ANTONIO_RAMOS_AA5_EV03 - 7 servicios OK"}
+
+1. PLATOS
+
+GET     /api/platos
+POST    /api/platos
+PUT     /api/platos/:id
+DELETE  /api/platos/:id
+
+Ejemplo POST Body (JSON):
+{
+  "nombre": "Bandeja Paisa",
+  "precio": 25000
+}
+
+2. CATEGORIAS
+
+GET     /api/categorias
+POST    /api/categorias
+
+Ejemplo POST Body (JSON):
+{
+  "nombre": "Tipica"
+}
+
+3. MESAS
+
+GET     /api/mesas
+POST    /api/mesas
+
+Ejemplo POST Body (JSON):
+{
+  "numero": 1,
+  "estado": "libre"
+}
+
+4. PEDIDOS
+
+GET     /api/pedidos
+POST    /api/pedidos
+
+Ejemplo POST Body (JSON):
+{
+  "plato": "Bandeja Paisa",
+  "cantidad": 2,
+  "mesa": 1
+}
+
+5. RESERVAS
+
+GET     /api/reservas
+POST    /api/reservas
+
+Ejemplo POST Body (JSON):
+{
+  "nombre": "Antonio Ramos",
+  "mesa": 1,
+  "fecha": "2026-11-06"
+}
+
+6. USUARIOS
+
+GET     /api/usuarios
+POST    /api/usuarios
+
+Ejemplo POST Body (JSON):
+{
+  "nombre": "Antonio Ramos",
+  "email": "antonio@correo.com"
+}
+
+7. AUTH
+
+POST    /api/auth/login
+
+Ejemplo POST Body (JSON):
+{
+  "email": "antonio@correo.com",
+  "password": "1234"
+}
+
+Respuesta:
+{
+  "mensaje": "Login OK AA5_EV03",
+  "token": "fake-token-antonio",
+  "usuario": {...}
+}
+
+NOTA: En esta API solo existe /api/auth/login.
+No existe /api/auth/register en el codigo src/index.js.

@@ -1,0 +1,65 @@
+DOCUMENTACION API RESTAURANTE - Antonio Ramos - AA5 EV04
+
+
+PROYECTO: API Restaurante
+TECNOLOGIAS: Node.js, Express, MySQL, XAMPP
+BASE URL: http://localhost:3000/api
+PUERTO: 3000
+
+DESCRIPCION:
+API REST para gestionar un restaurante: platos, categorias,
+mesas, pedidos, reservas, usuarios y autenticacion.
+
+SERVICIOS - 7 EN TOTAL:
+1. AUTH - Login de usuarios
+   POST /api/auth/login
+
+2. USUARIOS - Gestion de usuarios
+   GET /api/usuarios
+   POST /api/usuarios
+   GET /api/usuarios/:id
+   PUT /api/usuarios/:id
+   DELETE /api/usuarios/:id
+
+3. CATEGORIAS - Categorias de platos
+   GET /api/categorias
+   POST /api/categorias
+   GET /api/categorias/:id
+   PUT /api/categorias/:id
+   DELETE /api/categorias/:id
+
+4. PLATOS - Menu del restaurante
+   GET /api/platos
+   POST /api/platos
+   GET /api/platos/:id
+   PUT /api/platos/:id
+   DELETE /api/platos/:id
+
+5. MESAS - Control de mesas
+   GET /api/mesas
+   POST /api/mesas
+   GET /api/mesas/:id
+   PUT /api/mesas/:id
+   DELETE /api/mesas/:id
+
+6. PEDIDOS - Pedidos de clientes
+   GET /api/pedidos
+   POST /api/pedidos
+   GET /api/pedidos/:id
+   PUT /api/pedidos/:id
+   DELETE /api/pedidos/:id
+
+7. RESERVAS - Reservas de mesas
+   GET /api/reservas
+   POST /api/reservas
+   GET /api/reservas/:id
+   PUT /api/reservas/:id
+   DELETE /api/reservas/:id
+
+INSTALACION:
+1. Prender XAMPP - Apache y MySQL
+2. En restaurante-backend: npm install
+3. npm start
+4. Servidor corriendo en http://localhost:3000
+
+AUTOR: Antonio Ramos - AA5 EV04
