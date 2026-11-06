@@ -1,0 +1,202 @@
+DOCUMENTO DE PRUEBAS - API Restaurante
+Antonio Ramos - AA5 EV04
+
+
+HERRAMIENTA: Postman
+BASE URL: http://localhost:3000/api
+REQUISITOS PREVIOS:
+- XAMPP prendido: Apache y MySQL en Start
+- En restaurante-backend: npm start
+- Debe decir: Servidor corriendo en http://localhost:3000
+
+1. PRUEBAS DE AUTH
+
+1.1 POST /api/auth/login
+Body JSON:
+{
+  "correo": "admin@restaurante.com",
+  "contrasena": "123456"
+}
+Resultado esperado: 200 OK - Devuelve mensaje de login y token/usuario
+Resultado obtenido: 200 OK - CORRECTO
+
+2. PRUEBAS DE USUARIOS
+
+2.1 GET /api/usuarios
+Resultado esperado: 200 OK - Muestra lista de usuarios en JSON
+Resultado obtenido: 200 OK - CORRECTO
+
+2.2 POST /api/usuarios
+Body JSON:
+{
+  "nombre": "Juan Prueba",
+  "correo": "juan@prueba.com",
+  "contrasena": "123456",
+  "rol": "mesero"
+}
+Resultado esperado: 201 Created - Usuario creado
+Resultado obtenido: 201 Created - CORRECTO
+
+2.3 GET /api/usuarios/:id
+Ejemplo: GET /api/usuarios/1
+Resultado esperado: 200 OK - Muestra un usuario
+Resultado obtenido: 200 OK - CORRECTO
+
+2.4 PUT /api/usuarios/:id
+Body JSON:
+{
+  "nombre": "Juan Actualizado",
+  "correo": "juan@prueba.com",
+  "rol": "admin"
+}
+Resultado esperado: 200 OK - Usuario actualizado
+Resultado obtenido: 200 OK - CORRECTO
+
+2.5 DELETE /api/usuarios/:id
+Resultado esperado: 200 OK - Usuario eliminado
+Resultado obtenido: 200 OK - CORRECTO
+
+3. PRUEBAS DE CATEGORIAS
+
+3.1 GET /api/categorias
+Resultado esperado: 200 OK - Muestra lista de categorias
+Resultado obtenido: 200 OK - CORRECTO
+
+3.2 POST /api/categorias
+Body JSON:
+{
+  "nombre": "Platos Tipicos",
+  "descripcion": "Categoria de prueba EV04"
+}
+Resultado esperado: 201 Created
+Resultado obtenido: 201 Created - CORRECTO
+
+3.3 PUT /api/categorias/:id
+Resultado esperado: 200 OK - Categoria actualizada
+Resultado obtenido: 200 OK - CORRECTO
+
+3.4 DELETE /api/categorias/:id
+Resultado esperado: 200 OK - Categoria eliminada
+Resultado obtenido: 200 OK - CORRECTO
+
+4. PRUEBAS DE PLATOS
+
+4.1 GET /api/platos
+Resultado esperado: 200 OK - Muestra lista de platos
+Resultado obtenido: 200 OK - CORRECTO
+
+4.2 POST /api/platos
+Body JSON:
+{
+  "nombre": "Bandeja Paisa",
+  "precio": 35000,
+  "categoria_id": 1,
+  "descripcion": "Plato de prueba EV04"
+}
+Resultado esperado: 201 Created
+Resultado obtenido: 201 Created - CORRECTO
+
+4.3 GET /api/platos/:id
+Resultado esperado: 200 OK - Muestra un plato
+Resultado obtenido: 200 OK - CORRECTO
+
+4.4 PUT /api/platos/:id
+Body JSON:
+{
+  "nombre": "Bandeja Paisa Especial",
+  "precio": 38000,
+  "categoria_id": 1,
+  "descripcion": "Actualizado EV04"
+}
+Resultado esperado: 200 OK - Plato actualizado
+Resultado obtenido: 200 OK - CORRECTO
+
+4.5 DELETE /api/platos/:id
+Resultado esperado: 200 OK - Plato eliminado
+Resultado obtenido: 200 OK - CORRECTO
+
+5. PRUEBAS DE MESAS
+
+5.1 GET /api/mesas
+Resultado esperado: 200 OK - Muestra lista de mesas
+Resultado obtenido: 200 OK - CORRECTO
+
+5.2 POST /api/mesas
+Body JSON:
+{
+  "numero": 10,
+  "capacidad": 4,
+  "estado": "disponible"
+}
+Resultado esperado: 201 Created
+Resultado obtenido: 201 Created - CORRECTO
+
+5.3 PUT /api/mesas/:id
+Resultado esperado: 200 OK - Mesa actualizada
+Resultado obtenido: 200 OK - CORRECTO
+
+5.4 DELETE /api/mesas/:id
+Resultado esperado: 200 OK - Mesa eliminada
+Resultado obtenido: 200 OK - CORRECTO
+
+6. PRUEBAS DE PEDIDOS
+
+6.1 GET /api/pedidos
+Resultado esperado: 200 OK - Muestra lista de pedidos
+Resultado obtenido: 200 OK - CORRECTO
+
+6.2 POST /api/pedidos
+Body JSON:
+{
+  "mesa_id": 1,
+  "usuario_id": 1,
+  "total": 35000,
+  "estado": "pendiente"
+}
+Resultado esperado: 201 Created
+Resultado obtenido: 201 Created - CORRECTO
+
+6.3 PUT /api/pedidos/:id
+Resultado esperado: 200 OK - Pedido actualizado
+Resultado obtenido: 200 OK - CORRECTO
+
+6.4 DELETE /api/pedidos/:id
+Resultado esperado: 200 OK - Pedido eliminado
+Resultado obtenido: 200 OK - CORRECTO
+
+7. PRUEBAS DE RESERVAS
+
+7.1 GET /api/reservas
+Resultado esperado: 200 OK - Muestra lista de reservas
+Resultado obtenido: 200 OK - CORRECTO
+
+7.2 POST /api/reservas
+Body JSON:
+{
+  "mesa_id": 1,
+  "nombre_cliente": "Carlos Prueba",
+  "fecha": "2026-11-06",
+  "hora": "12:00",
+  "personas": 2
+}
+Resultado esperado: 201 Created
+Resultado obtenido: 201 Created - CORRECTO
+
+7.3 PUT /api/reservas/:id
+Resultado esperado: 200 OK - Reserva actualizada
+Resultado obtenido: 200 OK - CORRECTO
+
+7.4 DELETE /api/reservas/:id
+Resultado esperado: 200 OK - Reserva eliminada
+Resultado obtenido: 200 OK - CORRECTO
+
+CONCLUSION
+
+Total servicios probados: 7
+Total pruebas realizadas: 29
+Todas las pruebas GET dieron 200 OK
+Todas las pruebas POST dieron 201 Created
+Todas las pruebas PUT y DELETE dieron 200 OK
+La API funciona correctamente con CRUD completo.
+
+AUTOR: Antonio Ramos - AA5 EV04
