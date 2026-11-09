@@ -5,8 +5,8 @@ Antonio Ramos - AA5 EV04
 HERRAMIENTA: Postman
 BASE URL: http://localhost:3000/api
 REQUISITOS PREVIOS:
-- XAMPP prendido: Apache y MySQL en Start
 - En restaurante-backend: npm start
+- proyecto en memoria , No usa XAMPP ni MySQL
 - Debe decir: Servidor corriendo en http://localhost:3000
 
 1. PRUEBAS DE AUTH

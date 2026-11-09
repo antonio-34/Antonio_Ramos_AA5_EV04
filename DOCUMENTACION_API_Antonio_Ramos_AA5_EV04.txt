@@ -2,7 +2,7 @@ DOCUMENTACION API RESTAURANTE - Antonio Ramos - AA5 EV04
 
 
 PROYECTO: API Restaurante
-TECNOLOGIAS: Node.js, Express, MySQL, XAMPP
+TECNOLOGIAS: Node.js, Express, Almacenamiento en memoria (sin base de datos)
 BASE URL: http://localhost:3000/api
 PUERTO: 3000
 
@@ -57,8 +57,8 @@ SERVICIOS - 7 EN TOTAL:
    DELETE /api/reservas/:id
 
 INSTALACION:
-1. Prender XAMPP - Apache y MySQL
-2. En restaurante-backend: npm install
+1. En restaurante-backend: npm install
+2. npm start
 3. npm start
 4. Servidor corriendo en http://localhost:3000
 
